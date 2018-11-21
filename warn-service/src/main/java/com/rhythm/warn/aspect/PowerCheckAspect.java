@@ -1,5 +1,6 @@
 package com.rhythm.warn.aspect;
 
+import com.rhythm.warn.annotation.PowerCheck;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;

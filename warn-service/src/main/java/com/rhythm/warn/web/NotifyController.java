@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * demo
+ * 通知
  *
  * @author majunjie
  * @date 2018/11/19 13:08
  */
 @RestController
-@RequestMapping("/support")
+@RequestMapping("/notify")
 @Slf4j
-public class SupportController extends BaseController {
+public class NotifyController extends BaseController {
 
     /**
      * 心跳接口

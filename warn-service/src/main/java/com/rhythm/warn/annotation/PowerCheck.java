@@ -1,4 +1,4 @@
-package com.rhythm.warn.aspect;
+package com.rhythm.warn.annotation;
 
 import java.lang.annotation.*;
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rhythm.warn.mapper.NotifyLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.rhythm.warn.entity.NotifyLogDO">
+    <result column="id" property="id" />
+    <result column="created_time" property="createdTime" />
+    <result column="modified_time" property="modifiedTime" />
+    <result column="creator" property="creator" />
+    <result column="modifier" property="modifier" />
+    <result column="version" property="version" />
+    <result column="is_deleted" property="isDeleted" />
+        <result column="notify_user_name" property="notifyUserName" />
+        <result column="notify_user_account" property="notifyUserAccount" />
+        <result column="notify_content" property="notifyContent" />
+        <result column="notify_type_name" property="notifyTypeName" />
+        <result column="notify_impl_name" property="notifyImplName" />
+        <result column="notify_account_name" property="notifyAccountName" />
+        <result column="result" property="result" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+    id,
+    created_time AS createdTime,
+    modified_time AS modifiedTime,
+    creator,
+    modifier,
+    version,
+    is_deleted AS isDeleted,
+        notify_user_name AS notifyUserName, notify_user_account AS notifyUserAccount, notify_content AS notifyContent, notify_type_name AS notifyTypeName, notify_impl_name AS notifyImplName, notify_account_name AS notifyAccountName, result
+    </sql>
+
+</mapper>

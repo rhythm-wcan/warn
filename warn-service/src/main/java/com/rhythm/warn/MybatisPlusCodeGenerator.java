@@ -47,7 +47,7 @@ public class MybatisPlusCodeGenerator {
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
         strategy.setTablePrefix(new String[] { "tb" });
         // 自定义实体父类
-        strategy.setSuperEntityClass("com.wn.common.datamodel.SimpleBaseDO");
+        strategy.setSuperEntityClass("com.wn.common.datamodel.BaseDO");
         strategy.setSuperEntityColumns(
                 new String[] { "id", "created_time", "creator", "modified_time", "modifier", "is_deleted", "version" });
         strategy.setEntityLombokModel(true);// 支持lombok 简化代码

@@ -11,6 +11,8 @@ public interface DbField {
      * 字段名
      */
     String id = "id";
+    String name = "name";
+    String notify_code = "notify_code";
 
     /**
      * 值

@@ -1,26 +1,29 @@
 package com.rhythm.warn.common.enums;
 
 /**
- * demo
+ * 通知方式实现code
  *
  * @author majunjie
- * @date 2018/811/19 13:03
+ * @date 2018/11/19 13:03
  */
-public enum DemoEnum {
+public enum NotifyImplCodeEnum {
 
-    DEMO("demo", "样例"),
+    MAIL("default_mail", "邮件默认实现"),
+    PHONE_MSG("default_phone_msg", "手机短信默认实现"),
+    WECHAT("default_wechat", "微信默认实现"),
+    DINGDING("default_dingding", "钉钉默认实现"),
     ;
 
     private String code;
     private String remark;
 
-    DemoEnum(String code, String remark) {
+    NotifyImplCodeEnum(String code, String remark) {
         this.code = code;
         this.remark = remark;
     }
 
-    public static DemoEnum getEnum(String code) {
-        for (DemoEnum authCodeEnum : DemoEnum.values()) {
+    public static NotifyImplCodeEnum getEnum(String code) {
+        for (NotifyImplCodeEnum authCodeEnum : NotifyImplCodeEnum.values()) {
             if (authCodeEnum.getCode().equals(code)) {
                 return authCodeEnum;
             }

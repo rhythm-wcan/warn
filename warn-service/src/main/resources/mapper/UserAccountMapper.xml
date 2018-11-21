@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rhythm.warn.mapper.UserAccountMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.rhythm.warn.entity.UserAccountDO">
+    <result column="id" property="id" />
+    <result column="created_time" property="createdTime" />
+    <result column="modified_time" property="modifiedTime" />
+    <result column="creator" property="creator" />
+    <result column="modifier" property="modifier" />
+    <result column="version" property="version" />
+    <result column="is_deleted" property="isDeleted" />
+        <result column="notify_user_id" property="notifyUserId" />
+        <result column="notify_code" property="notifyCode" />
+        <result column="user_account" property="userAccount" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+    id,
+    created_time AS createdTime,
+    modified_time AS modifiedTime,
+    creator,
+    modifier,
+    version,
+    is_deleted AS isDeleted,
+        notify_user_id AS notifyUserId, notify_code AS notifyCode, user_account AS userAccount
+    </sql>
+
+</mapper>

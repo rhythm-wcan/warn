@@ -28,6 +28,7 @@
         <java.version>1.8</java.version>
         <lombok.version>1.16.18</lombok.version>
         <java.version>1.8</java.version>
+        <data-common.version>1.0.3</data-common.version>
     </properties>
 
     <profiles>
@@ -55,6 +56,14 @@
             </activation>
         </profile>
     </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.wn.common</groupId>
+            <artifactId>data-model</artifactId>
+            <version>${data-common.version}</version>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>

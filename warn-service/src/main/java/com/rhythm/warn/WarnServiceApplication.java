@@ -1,6 +1,6 @@
 package com.rhythm.warn;
 
-import com.wn.common.app.BaseApplication;
+import com.spring4all.swagger.EnableSwagger2Doc;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
@@ -34,14 +35,16 @@ import java.nio.charset.StandardCharsets;
 @EnableDiscoveryClient
 @EnableAspectJAutoProxy(exposeProxy = true)
 @MapperScan("com.rhythm.warn.mapper")
-public class WarnServiceApplication extends BaseApplication {
+@ComponentScan(value = {"com.wn.common.cache"})
+@ComponentScan(value = {"com.wn.common.lock"})
+@EnableSwagger2Doc
+public class WarnServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(WarnServiceApplication.class, args);
     }
 
     @Bean
-    @Override
     public RestTemplate restTemplate() {
         //生成一个设置了连接超时时间、请求超时时间、异常最大重试次数的httpClient
         RequestConfig config = RequestConfig.custom().setConnectionRequestTimeout(10000).setConnectTimeout(10000)

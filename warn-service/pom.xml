@@ -16,24 +16,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <app-common.version>1.1.1</app-common.version>
-        <auth-common.version>1.2.0</auth-common.version>
         <cache-common.version>1.0.1</cache-common.version>
-        <perf-monitor-common.version>1.1.0</perf-monitor-common.version>
-        <notify-common.version>1.0.2</notify-common.version>
-        <log-common.version>1.0.0</log-common.version>
         <lock-common.version>1.0.1</lock-common.version>
         <warn-common.version>1.0.0-SNAPSHOT</warn-common.version>
     </properties>
 
     <dependencies>
 
-        <dependency>
-            <groupId>com.wopay</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <version>1.50.0</version>
-            <scope>runtime</scope>
-        </dependency>
         <dependency>
             <groupId>com.rhythm</groupId>
             <artifactId>warn-common</artifactId>
@@ -42,32 +31,8 @@
 
         <dependency>
             <groupId>com.wn.common</groupId>
-            <artifactId>app</artifactId>
-            <version>${app-common.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.wn.common</groupId>
             <artifactId>common-lock</artifactId>
             <version>${lock-common.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.wn.common</groupId>
-            <artifactId>perf-monitor</artifactId>
-            <version>${perf-monitor-common.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.wn.common</groupId>
-            <artifactId>common-auth</artifactId>
-            <version>${auth-common.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.wn.common</groupId>
-            <artifactId>common-notify</artifactId>
-            <version>${notify-common.version}</version>
         </dependency>
 
         <dependency>
@@ -190,12 +155,18 @@
             <artifactId>protobuf-java</artifactId>
             <version>2.5.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.aliyun.openservices</groupId>
             <artifactId>aliyun-log-logback-appender</artifactId>
             <version>0.1.12</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.spring4all</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>1.7.0.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
