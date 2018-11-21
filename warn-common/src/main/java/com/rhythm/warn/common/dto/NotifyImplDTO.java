@@ -1,6 +1,5 @@
 package com.rhythm.warn.common.dto;
 
-import com.wn.common.datamodel.BaseDTO;
 import lombok.Data;
 
 /**
@@ -12,7 +11,7 @@ import lombok.Data;
  * @since 2018-11-21
  */
 @Data
-public class NotifyImplDTO extends BaseDTO {
+public class NotifyImplDTO {
 
     private static final long serialVersionUID = 1L;
 
@@ -28,14 +27,5 @@ public class NotifyImplDTO extends BaseDTO {
      * 实现类型code
      */
     private String notifyImplCode;
-    /**
-     * 状态：-1无效、0初始、1有效
-     */
-    private Integer status;
-    /**
-     * 备注
-     */
-    private String remark;
-
 
 }

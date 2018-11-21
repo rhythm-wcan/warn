@@ -8,18 +8,19 @@ package com.rhythm.warn.common.enums;
  */
 public enum NotifyImplCodeEnum {
 
-    MAIL("default_mail", "邮件默认实现"),
-    PHONE_MSG("default_phone_msg", "手机短信默认实现"),
-    WECHAT("default_wechat", "微信默认实现"),
-    DINGDING("default_dingding", "钉钉默认实现"),
-    ;
+    MAIL("default_mail", NotifyTypeCodeEnum.MAIL.getCode(), "邮件默认实现"),
+    PHONE_MSG("default_phone_msg", NotifyTypeCodeEnum.PHONE_MSG.getCode(), "手机短信默认实现"),
+    WECHAT("default_wechat", NotifyTypeCodeEnum.WECHAT.getCode(), "微信默认实现"),
+    DINGDING("default_dingding", NotifyTypeCodeEnum.DINGDING.getCode(), "钉钉默认实现"),;
 
     private String code;
-    private String remark;
+    private String typeCode;
+    private String name;
 
-    NotifyImplCodeEnum(String code, String remark) {
+    NotifyImplCodeEnum(String code, String typeCode, String name) {
         this.code = code;
-        this.remark = remark;
+        this.typeCode = typeCode;
+        this.name = name;
     }
 
     public static NotifyImplCodeEnum getEnum(String code) {
@@ -39,11 +40,19 @@ public enum NotifyImplCodeEnum {
         this.code = code;
     }
 
-    public String getRemark() {
-        return remark;
+    public String getName() {
+        return name;
     }
 
-    public void setRemark(String remark) {
-        this.remark = remark;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTypeCode() {
+        return typeCode;
+    }
+
+    public void setTypeCode(String typeCode) {
+        this.typeCode = typeCode;
     }
 }

@@ -6,6 +6,7 @@ package com.rhythm.warn.constants;
  * @author majunjie
  * @date 2018/11/19 13:07
  */
-public interface Constant {
+public class Constant {
+
 
 }
