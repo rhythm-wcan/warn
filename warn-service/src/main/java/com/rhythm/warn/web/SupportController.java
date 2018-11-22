@@ -1,6 +1,7 @@
 package com.rhythm.warn.web;
 
 
+import com.rhythm.warn.annotation.LimitRequest;
 import com.wn.common.datamodel.ResultDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,17 @@ public class SupportController extends BaseController {
      */
     @GetMapping("/heartbeat")
     public ResponseEntity<ResultDTO<String>> heartbeat() {
+        return success("hello world");
+    }
+
+    /**
+     * 测试业务接口
+     *
+     * @return
+     */
+    @LimitRequest
+    @GetMapping("/test/service")
+    public ResponseEntity<ResultDTO<String>> test() {
         return success("hello world");
     }
 

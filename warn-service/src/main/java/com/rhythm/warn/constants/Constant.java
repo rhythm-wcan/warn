@@ -8,5 +8,6 @@ package com.rhythm.warn.constants;
  */
 public class Constant {
 
+    public static final String LIMIT_REQUEST = "middleware:limit:request";
 
 }
