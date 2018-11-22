@@ -11,22 +11,22 @@ import java.util.concurrent.TimeUnit;
 public abstract class CounterRateLimiterInterface implements RateLimiterInterface {
 
     /**
-     * 时间单位
+     * 获取时间单位
+     *
+     * @return
      */
-    protected TimeUnit timeUnit;
-    /**
-     * 单位时间上限
-     */
-    protected Long maxCount;
-    /**
-     * 限流目标
-     */
-    protected CounterTargetInterface counterTarget;
+    public abstract TimeUnit getTimeUnit() ;
 
-    public CounterRateLimiterInterface(TimeUnit timeUnit, Long maxCount, CounterTargetInterface counterTarget) {
-        this.timeUnit = timeUnit;
-        this.maxCount = maxCount;
-        this.counterTarget = counterTarget;
-    }
+    /**
+     * 获取单位时间，限流上限
+     * @return
+     */
+    public abstract Long getMaxCount() ;
 
+    /**
+     * 获取限流对象
+     *
+     * @return
+     */
+    public abstract CounterTargetInterface getCounterTarget() ;
 }
