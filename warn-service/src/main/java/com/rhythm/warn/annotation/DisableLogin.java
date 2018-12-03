@@ -3,14 +3,14 @@ package com.rhythm.warn.annotation;
 import java.lang.annotation.*;
 
 /**
- * 权限拦截
+ * 禁用登录
  *
  * @author majunjie
- * @date 2018/11/19 13:06
+ * @date 2018/12/3 17:59
  */
 @Documented
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface PowerCheck {
+public @interface DisableLogin {
 
 }

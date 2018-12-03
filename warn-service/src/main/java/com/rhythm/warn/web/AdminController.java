@@ -1,6 +1,7 @@
 package com.rhythm.warn.web;
 
 
+import com.rhythm.warn.annotation.DisableLogin;
 import com.rhythm.warn.common.dto.LoginDTO;
 import com.rhythm.warn.errorcode.ErrorCode;
 import com.rhythm.warn.exception.Assert;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
+import javax.servlet.http.HttpSession;
 
 /**
  * 通知管理控制器
@@ -34,6 +35,7 @@ public class AdminController extends BaseController {
      *
      * @return
      */
+    @DisableLogin
     @PostMapping("/login")
     public ResponseEntity<ResultDTO<Boolean>> login(@RequestBody LoginDTO loginDTO) {
         Assert.notNull(loginDTO, ErrorCode.PARAM_DATA_NULL);
@@ -49,6 +51,9 @@ public class AdminController extends BaseController {
         Assert.isTrue(username.equals(originUn), ErrorCode.LOGIN_FAIL);
         Assert.isTrue(password.equals(originPw), ErrorCode.LOGIN_FAIL);
         //TODO 登录信息放入session
+        HttpSession session = getSession();
+        String sessionId = session.getId();
+        session.setAttribute(sessionId, true);
         return success(true);
     }
 
