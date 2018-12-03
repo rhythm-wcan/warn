@@ -1,17 +1,16 @@
 package com.rhythm.warn.support.ratelimit;
 
 import com.rhythm.warn.exception.RateLimitException;
-import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * redis实现计数器限流
+ * redis实现单秒计数器限流
  *
  * @author majunjie
  * @date 2018/11/22 12:45
  */
-public class RedisCounterRateLimiter extends CounterRateLimiterInterface {
+public class RedisSecondCounterRateLimiter extends CounterRateLimiterInterface {
 
     /**
      *
@@ -29,7 +28,6 @@ public class RedisCounterRateLimiter extends CounterRateLimiterInterface {
 
     @Override
     public void rateLimit() throws RateLimitException {
-        //简单特殊规则，直接处理
 
         //比较上一次规则，初始化轮询数组
 

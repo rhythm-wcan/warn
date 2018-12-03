@@ -1,7 +1,7 @@
 package com.rhythm.warn.web;
 
 
-import com.rhythm.warn.annotation.LimitRequest;
+import com.rhythm.warn.annotation.TestRateLimiter;
 import com.wn.common.datamodel.ResultDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +35,7 @@ public class SupportController extends BaseController {
      *
      * @return
      */
-    @LimitRequest
+    @TestRateLimiter
     @GetMapping("/test/service")
     public ResponseEntity<ResultDTO<String>> test() {
         return success("hello world");
